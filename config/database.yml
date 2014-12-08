@@ -1,0 +1,7 @@
+development:
+  adapter: postgresql
+  database: csv_development
+
+test:
+  adapter: postgresql
+  database: csv_test

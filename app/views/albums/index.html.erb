@@ -1,0 +1,46 @@
+<div class="container">
+  <div class="col-md-3"> 
+    <h3>CSV Importer <small>Mindspace</small></h3>
+    <%= flash[:notice] %><br>
+
+    <h3>Album File</h3>
+    <%= form_tag import_albums_path, multipart: true do %>
+      <%= file_field_tag :file %><br>
+      <%= button_tag(type: 'submit', class: "btn btn-danger btn-xs") do %>
+      <%= "+ Import" %>
+      <% end %>
+    <% end %>
+  </div>
+
+
+
+  <div class="col-md-9">
+    <h3></h3>
+      <% if @albums.present? %>
+        <table style="width:100%">
+          <thead>
+            <tr>
+              <th>Release Year</th>
+              <th>Artist</th>
+              <th>Album</th>
+              <th>Rating</th>
+              <th>Purchase</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @albums.each do |album| %>
+              <tr>
+                <td><%= album.release_year %></td>
+                <td><%= album.artist %></td>
+                <td><%= album.album %></td>
+                <td><%= album.rating %></td>
+                <td><a class="btn btn-primary btn-xs" href="http://www.amazon.com/s/ref=nb_sb_noss?url=search-alias%3Ddigital-music&field-keywords=<%= album.album %>" target="_blank">Amazon</a>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      <% end %>
+    </div>
+  </div>
+</div>
+
