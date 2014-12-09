@@ -1,25 +1,24 @@
 <div class="container">
 
-
-
-
   <div class="col-md-3"> 
-    <h3>CSV Importer <small>Mindspace</small></h3>
-    <%= flash[:notice] %><br>
+    <h3>CSV Importer <small span id="h3-color">Mindspace</small></h3>
+      
       <img src="assets/record.gif" class="img-responsive" alt="Responsive image">
-
-    <h3>Album File</h3>
+   
+    <h3>Album File:</h3>
+    <br>
     <%= form_tag import_albums_path, multipart: true do %>
       <%= file_field_tag :file %><br>
-      <%= button_tag(type: 'submit', class: "btn btn-danger btn-xs") do %>
-      <%= "+ Import" %>
+      <%= button_tag(type: 'submit', class: "btn btn-primary btn-xs") do %>
+      <%= "+ Upload" %>
       <% end %>
     <% end %>
+    <%= flash[:notice] %><br>
   </div>
 
 
   <div class="col-md-9">
-    <h3></h3>
+    <br>
       <% if @albums.present? %>
         <table style="width:100%">
           <thead>
@@ -38,7 +37,7 @@
                 <td><%= album.artist %></td>
                 <td><%= album.album %></td>
                 <td><%= album.rating %></td>
-                <td><a class="btn btn-primary btn-xs" href="http://www.amazon.com/s/ref=nb_sb_noss?url=search-alias%3Ddigital-music&field-keywords=<%= album.album %>" target="_blank">Amazon</a>
+                <td><a class="btn btn-danger btn-xs" href="http://www.amazon.com/s/ref=nb_sb_noss?url=search-alias%3Ddigital-music&field-keywords=<%= album.album %>" target="_blank">Amazon</a>
               </tr>
             <% end %>
           </tbody>

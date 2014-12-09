@@ -33,4 +33,26 @@ td {
   padding: 5px;
 }
 
+img {
+  padding-top: 10px;
+}
+
+h3 {
+  background-color: #8B8378;
+  border-radius: 5px;
+  border-color: #8B8682;
+  padding-top: 5px;
+  padding-right: 5px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  color: white;
+  font-family: 'Lobster', cursive;
+}
+
+#h3-color {
+  color: black;
+  font: $font-stack;
+}
+
+
 
