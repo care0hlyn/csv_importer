@@ -21,18 +21,16 @@ $font-stack: Helvetica, sans-serif;
 
 body {
   font: $font-stack;
+
 }
 
 .col-md-3 {
   height: 100%;
-  position: fixed;
   overflow: hidden;
-  outline: none;
-  background: #424a5d;
 }
 
-.col-md-9 {
-  height: 100%;
-  position: fixed;
-  overflow: hidden;
+td {
+  padding: 5px;
 }
+
+
